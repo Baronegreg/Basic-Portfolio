@@ -1,8 +1,6 @@
 /*	Tried to work mostly with Flexbox on this one.
-	 Ran into some postitioning issues*/
-* {
-
-}
+	 Ran into some postitioning issues. 
+	 Existing issue on .topdiv??*/
 
 html {
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
@@ -10,6 +8,12 @@ html {
 	margin: 0 auto;
 	color: #777777;
 
+}
+
+body{
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
 }
 
 
@@ -22,7 +26,7 @@ h1 {
 h2 {
 	font-family: 'Georgia', Times, Times New Roman, serif;
 	border-bottom: 3px solid #ccc;
-    padding-bottom: 20px;
+    
     font-size: 26px;
     color: #4aaaa5;
     font-weight: bold;
@@ -44,15 +48,8 @@ p {
 }
 
 nav {
-	float: right;
-	line-height: 90px;
-	margin-right: 60px;
-}
-
-nav ul li {
-	display: inline;
-	padding-left: 10px;
-	padding-right: 10px;
+	display: flex;
+	justify-content: space-between;
 }
 
 a {
@@ -63,83 +60,57 @@ a:hover {
 	color: gray;
 }
 
-input {
+.top-div{
+	flex-direction: row;
+	justify-content: space-between;
 	width: 100%;
-    height: 20px;
-    margin: 10px 0;
+	height:20%;
 }
 
-textarea {
-	width: 100%;
-    margin: 10px 0;
+.logo {
+	width: 25%; 
+    background: #4aaaa5;
+    color: white;
 }
 
-#profile-picture{
-	height: 200px;
-	width: 200px;
-}
-
-#main-nav > ul > li + li {
+#main-nav {
+	justify-content: flex-end;
 	border-left: 1px solid #ccc;
+	width: 25%
+	
 }
-
-#main-nav > ul > li > a {
+li{
 	text-decoration: none;
-}
-
-.header-inner {
-	max-width: 960px;
-	margin: 0 auto;
 }
 
 .main-content {
 	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 95%;
+	height:60%;
+	background-color: #ffffff;
+}
+
+.images{
+	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
-	max-width:500px;
-	height: 500px;
-	margin: 0 auto;
-	margin-bottom:80px;
+	width: 50%
 }
 
 .port{
 	padding: 3%;
 }
 
-.logo {
-	float: left;
-    margin: 0;
-    line-height: 30px;
-    background: #4aaaa5;
-    padding: 30px;
-    color: white;
-}
-
-.header {
-	height: 90px;
-	background: white;
-	margin-bottom: 20px;
-}
-
-.page-content {
-	width: 618px;
-	float: left;
-	padding: 20px 15px;
-	margin-right:10px;
-	background: #fff;
-	border: 1px solid #dddddd;
-}
-
 .sidebar {
 	width: 248px;
-    float: right;
-    padding: 20px 10px;
+   	flex-direction: row;
+    height: 10%;
     background: #fff;
     border: 1px solid #dddddd;
 }
 
 .footer {
-	clear: both;
 	height:70px;
 	padding-top:15px;
 	padding-bottom:15px;
@@ -165,9 +136,4 @@ textarea {
     border: none;
     color: #fff;
     cursor: pointer;
-}
-
-.flex {
-	display: inline-flex;
-	float: none;
 }
